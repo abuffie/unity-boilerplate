@@ -29,6 +29,6 @@
     }
   ],
   "dependencies": {
-    "https://github.com/abuffie/unity-script-templates.git": "1.0.0"
+    "com.aarware.scripts.templates": "https://github.com/abuffie/unity-script-templates.git"
   }
 }
