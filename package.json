@@ -1,0 +1,34 @@
+{
+  "name": "com.aarware.core",
+  "version": "1.0.0",
+  "displayName": "Core",
+  "description": "Some cool things to get you started",
+  "unity": "2021.3",
+  "unityRelease": "4f1",
+  "keywords": [],
+  "author": {
+    "name": "Aaron Buffie",
+    "email": "apbuffie@gmail.com",
+    "url": "http://aarware.com"
+  },
+  "samples": [
+    {
+      "displayName": "Confirm Buttons",
+      "description": "A few prefabs showing some basic set up",
+      "path": "Samples~/ConfirmButtons"
+    },
+    {
+      "displayName": "RemoteImages",
+      "description": "Used in the demo scene with a few images loading",
+      "path": "Samples~/RemoteImages"
+    },
+    {
+      "displayName": "Demo Scene",
+      "description": "Just a simple demo set up to show things working",
+      "path": "Samples~/Demo"
+    }
+  ],
+  "dependencies": {
+    "com.aarware.scripts.templates": "1.0.0"
+  }
+}

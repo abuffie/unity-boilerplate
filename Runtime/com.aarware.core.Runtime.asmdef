@@ -1,0 +1,16 @@
+{
+    "name": "com.aarware.core.Runtime",
+    "rootNamespace": "Aarware",
+    "references": [
+        "GUID:ef456363ab25c4c47bfaf3740e0e5563"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
