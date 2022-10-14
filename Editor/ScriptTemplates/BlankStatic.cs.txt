@@ -1,0 +1,10 @@
+using UnityEngine;
+
+#HEADER#
+
+public static class #SCRIPTNAME# {
+   
+   static #SCRIPTNAME#(){
+    
+   }
+}

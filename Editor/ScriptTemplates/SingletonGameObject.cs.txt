@@ -1,0 +1,15 @@
+using UnityEngine;
+using Aarware;
+
+#HEADER#
+
+public class #SCRIPTNAME# : MonoSingleton<#SCRIPTNAME#>{
+   
+	// Do not remove you will break your singleton
+	// This singleton will destroy on scene change
+	private void Awake(){
+		base.Awake(false); // do not persist and destroy entire gameObject if exists
+		
+        // Put your awake code below here if any
+	}
+}

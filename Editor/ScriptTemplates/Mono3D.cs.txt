@@ -1,0 +1,50 @@
+using UnityEngine;
+
+#HEADER#
+
+public class #SCRIPTNAME# : MonoBehaviour{
+    
+    //Ticks
+    void Awake(){}
+    void Start(){}	
+    void Update(){}	
+    void FixedUpdate(){}
+    void LateUpdate(){}
+    
+    // State
+    void OnDisable(){}    
+    void OnEnable(){}
+    void OnDestroy(){}
+    
+    //Application
+    void OnApplicationFocus(){} //Sent to all GameObjects when the player gets or loses focus.
+    void OnApplicationPause(){} //Sent to all GameObjects when the application pauses.
+    void OnApplicationQuit(){}  //Sent to all GameObjects before the application quits.
+
+    //Rendering
+    void OnBecameInvisible(){}  //called when the renderer is no longer visible by any camera.
+    void OnBecameVisible(){}    //called when the renderer became visible by any camera.
+    
+    //Collision
+    void OnCollisionEnter(Collision other){}	
+    void OnCollisionExit(Collision other){}	
+    void OnCollisionStay(Collision other){}
+    
+    //Trigger
+    void OnTriggerEnter(Collider other){}	
+    void OnTriggerExit(Collider other){}	
+    void OnTriggerStay(Collider other){}    
+    
+    // Mouse - see UnityEngine.EventSystems for better implementation
+    void OnMouseDown(){}
+    void OnMouseDrag(){}
+    void OnMouseEnter(){}	
+    void OnMouseExit(){}	
+    void OnMouseOver(){}	
+    void OnMouseUp(){}
+    void OnMouseUpAsButton(){}
+    
+    // Change
+    void OnTransformChildrenChanged(){} // called when the list of children of the transform of the GameObject has changed.
+    void OnTransformParentChanged(){}   // called when the parent property of the transform of the GameObject has changed.    
+}

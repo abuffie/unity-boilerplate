@@ -1,0 +1,14 @@
+using UnityEngine;
+using Aarware;
+
+#HEADER#
+
+public class #SCRIPTNAME# : MonoSingleton<#SCRIPTNAME#>{
+   
+	// Do not remove you will break your singleton
+	// This singleton DOES NOT destroy
+	private void Awake(){
+		base.Awake(true);
+		// Put your awake code here if any
+	}
+}
