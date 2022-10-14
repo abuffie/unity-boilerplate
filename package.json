@@ -27,8 +27,5 @@
       "description": "Just a simple demo set up to show things working",
       "path": "Samples~/Demo"
     }
-  ],
-  "dependencies": {
-    "com.aarware.scripts.templates": "https://github.com/abuffie/unity-script-templates.git"
-  }
+  ]
 }
