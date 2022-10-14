@@ -27,5 +27,8 @@
       "description": "Just a simple demo set up to show things working",
       "path": "Samples~/Demo"
     }
-  ]
+  ],
+  "dependencies": {
+    "com.aarware.scripts.templates": "1.0.1"
+  }
 }
