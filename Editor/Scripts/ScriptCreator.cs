@@ -8,7 +8,7 @@ namespace Aarware.Core.Editor {
 
     public class ScriptCreator : EditorWindow{
 
-        const string packageRoot = "Packages/com.aarware.script.templates";
+        const string packageRoot = "Packages/com.aarware.core";
 
         static string tplPath           = $"{packageRoot}/Editor/ScriptTemplates";
         static string androidStingsTpl  = $"{packageRoot}/Editor/Android/strings.xml.txt";

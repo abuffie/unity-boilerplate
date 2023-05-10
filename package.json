@@ -1,10 +1,10 @@
 {
   "name": "com.aarware.core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Core",
   "description": "Some cool things to get you started",
   "unity": "2021.3",
-  "unityRelease": "4f1",
+  "unityRelease": "18f1",
   "keywords": [],
   "author": {
     "name": "Aaron Buffie",
