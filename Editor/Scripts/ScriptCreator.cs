@@ -46,6 +46,7 @@ namespace Aarware.Core.Editor {
             
         }
         static void CreateScriptAsset(string templatePath, string destName) {
+            Debug.Log(templatePath);
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(templatePath, destName);
         }
    
