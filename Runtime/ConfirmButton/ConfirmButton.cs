@@ -20,13 +20,13 @@ namespace Aarware.Core {
 
         [SerializeField] Image      progressImage;
         [SerializeField] Gradient   progressColors;
-        [SerializeField] GameObject enabledEffect; // some effect feedback to enable
+        [SerializeField,Tooltip("Some effect feedback to enable on confirm")] GameObject enabledEffect;
 
-        [SerializeField, Range(0.2f,2f)]    float duration      = 1.25f;        
-        [SerializeField]                    float reEnableWait  = 3f;
-        [SerializeField]                    bool  onRelease     = true;
-        [SerializeField]                    bool  disable       = true;    
-        [SerializeField]                    bool  reEnable      = true;
+        [SerializeField, Range(0.2f,3f), Tooltip("How many seconds you have to hold the button")]   float duration      = 1.5f;        
+        [SerializeField, Tooltip("How many seconds before the button re-enables")]                  float reEnableWait  = 3f;
+        [SerializeField, Tooltip("Trigger click event on release or immediately after duration")]   bool  onRelease     = true;
+        [SerializeField, Tooltip("Disable button after confirm")]                                   bool  disable       = true;    
+        [SerializeField, Tooltip("Button re-enables after confirm")]                                bool  reEnable      = true;
         
         
         Coroutine countDownRoutine;
@@ -72,9 +72,7 @@ namespace Aarware.Core {
                 progressImage.fillAmount = Mathf.Lerp(0f, 1f, p);
                 yield return null;
             }
-            if(disable){
-                interactable=false;
-            }       
+                   
             actionReady=true; 
             if(!onRelease){
                 RunAction();
@@ -84,7 +82,8 @@ namespace Aarware.Core {
         void RunAction(){
             if(actionReady){
                 onClick?.Invoke();
-                if(enabledEffect!=null){enabledEffect.SetActive(true);}      
+                if(disable){interactable=false;}
+                if(enabledEffect!=null){enabledEffect.SetActive(true);}     
                 ClearCountDown();
                 RunReEnable();
             }
@@ -96,10 +95,6 @@ namespace Aarware.Core {
             if(enabledEffect!=null){enabledEffect.SetActive(false);} // make sure its disabled  
         }
         
-
-        public void Test(){
-            Debug.Log("TEST");
-        }
     
     }
 }

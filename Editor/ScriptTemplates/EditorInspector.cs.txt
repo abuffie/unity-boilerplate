@@ -1,0 +1,40 @@
+using UnityEngine;
+using UnityEditor;
+
+#HEADER#
+
+//** REPLACE typeof(#SCRIPTNAME#) WITH THE SCRIPT THE Editor IS FOR
+[CustomEditor(typeof(#SCRIPTNAME#))]
+public class #SCRIPTNAME# : Editor {
+   
+   // old way to access instance
+   // *use SerializedObject/SerializedProperty instead
+   //** REPLACE type #SCRIPTNAME#  WITH THE SCRIPT THE Editor IS FOR
+   #SCRIPTNAME# myTarget => (#SCRIPTNAME#)target;
+
+   
+    SerializedProperty  prop1; // Some Property in your #SCRIPTNAME# class
+    SerializedProperty  prop2; // Some Property in your #SCRIPTNAME# class
+
+    void OnEnable(){
+        // grab the ser ref for the class properties 
+        prop1   = serializedObject.FindProperty("prop1");
+        prop2   = serializedObject.FindProperty("prop2");
+    }
+
+    public override void OnInspectorGUI() {
+
+        // make sure we have all the changes
+        serializedObject.Update();
+
+        // Default Draw for the Properties
+        EditorGUILayout.PropertyField(prop1);
+        EditorGUILayout.PropertyField(prop1);
+
+        // Apply any changes
+        serializedObject.ApplyModifiedProperties();
+
+    }
+
+}
+

@@ -49,7 +49,12 @@ namespace Aarware.Core.Editor {
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(templatePath, destName);
         }
    
-        
+    //Editor
+        [MenuItem(menuRoot + "Editor/Inspector", false, 1)]
+        [MenuItem(toolRoot + "Editor/Inspector", false, 1)]
+        private static void EditorInspector(){			
+            CreateScriptAsset($"{tplPath}/EditorInspector.cs.txt", "NewEditorInspector.cs");
+        }
 
         
     // BLANK
@@ -127,8 +132,9 @@ namespace Aarware.Core.Editor {
                 return;
             }
     
-            index = Application.dataPath.LastIndexOf( "Assets" );
-            path = Application.dataPath.Substring( 0, index ) + path;
+            index   = Application.dataPath.LastIndexOf( "Assets" );
+            path    = Application.dataPath.Substring( 0, index ) + path;
+
             if (!System.IO.File.Exists( path )){
                 Debug.Log("no - " + path);
                 return;

@@ -41,11 +41,13 @@ namespace Aarware.Core.Editor{
             EditorGUILayout.PropertyField(progressImage);
             EditorGUILayout.PropertyField(progressColors);
             EditorGUILayout.PropertyField(enabledEffect);
-            EditorGUILayout.PropertyField(duration);            
-            EditorGUILayout.PropertyField(reEnableWait);
+            EditorGUILayout.PropertyField(duration);     
             EditorGUILayout.PropertyField(onRelease);
             EditorGUILayout.PropertyField(disable);
             EditorGUILayout.PropertyField(reEnable);
+            if(reEnable.boolValue){       
+                EditorGUILayout.PropertyField(reEnableWait);
+            }
             GUILayout.EndVertical();
 
             // Apply any changes

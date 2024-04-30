@@ -7,12 +7,12 @@ namespace Aarware.Core.Editor{
     class PanelControllerEditor : Editor{
 
         PanelController myTarget => target as PanelController;
-        bool instant = false;
+       // bool instant = false;
         SerializedProperty group;
 
         public override void OnInspectorGUI() {
             group   = serializedObject.FindProperty("group");
-            instant = GUILayout.Toggle(instant, "Instant");
+           // instant = GUILayout.Toggle(instant, "Instant");
             
             GUILayout.BeginHorizontal();
             if(myTarget.Closed){
@@ -27,7 +27,7 @@ namespace Aarware.Core.Editor{
 
         void Open(){
             if(Application.isPlaying){
-                myTarget.Open(instant);
+                myTarget.Open();
             }else{
                 ((CanvasGroup)group.objectReferenceValue).alpha=1f;
                 serializedObject.ApplyModifiedProperties();
@@ -35,7 +35,7 @@ namespace Aarware.Core.Editor{
         }
         void Close(){
             if(Application.isPlaying){
-                myTarget.Close(instant);
+                myTarget.Close();
             }else{
                 ((CanvasGroup)group.objectReferenceValue).alpha=0f;
                 serializedObject.ApplyModifiedProperties();

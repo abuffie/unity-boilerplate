@@ -11,15 +11,16 @@ namespace Aarware.Core{
 
     [RequireComponent(typeof(CanvasGroup))]
     public class PanelController : MonoBehaviour{
-        
+        [SerializeField]                    bool        instant     = true;
         [SerializeField]                    bool        hideOnStart = true;
         [SerializeField, Range(.5f, 10f)]   float       speed       = 5f;
         [SerializeField]                    CanvasGroup group;
 
-        public delegate void Begin();
-        public delegate void Complete();
-        public event Begin      OnBegin;
-        public event Complete   OnComplete;
+        public delegate void PanelControllerEvent();       
+        public event PanelControllerEvent   OnOpenBegin;
+        public event PanelControllerEvent   OnOpenComplete;        
+        public event PanelControllerEvent   OnCloseBegin;
+        public event PanelControllerEvent   OnCloseComplete;
 
         public bool Closed => group.alpha<=0f;
         public bool Locked => !group.interactable;
@@ -37,18 +38,25 @@ namespace Aarware.Core{
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="instant"></param>
         public void Open(bool instant=false) => Open(instant, null);
-        public void Open(bool instant, Action CallBack=null){        
+        public void Open(bool _instant, Action CallBack=null){        
             gameObject.SetActive(true); 
             StopAllCoroutines();
-            if(instant){
+            if(instant || _instant){
                 SetInstant(true);
+                CallBack?.Invoke();
+                OnOpenComplete?.Invoke();
                 return;
             }
-            
+            OnOpenBegin?.Invoke();
             StartCoroutine(Fade(true, ()=>{
                 group.interactable=true;
                 CallBack?.Invoke();
+                OnOpenComplete?.Invoke();
             }));
         }
 
@@ -58,14 +66,17 @@ namespace Aarware.Core{
             StopAllCoroutines();
             if(instant){
                 SetInstant(false);
+                CallBack?.Invoke();
+                OnCloseComplete?.Invoke();
                 return;
             }
-            
+            OnCloseBegin?.Invoke();
             StartCoroutine(Fade(false, ()=>{
                 group.interactable      = false;
                 group.blocksRaycasts    = false;
                 gameObject.SetActive(false); 
                 CallBack?.Invoke();
+                OnCloseComplete?.Invoke();
             }));
         }
 
@@ -77,9 +88,7 @@ namespace Aarware.Core{
             float target            = fadeIn ? 1f : 0f;
             group.interactable      = false;
             group.blocksRaycasts    = true;
-
-            // brodcast start of fade
-            OnBegin?.Invoke(); 
+ 
             // run the fade
             while(group.alpha != target){
                 group.alpha = Mathf.Clamp( (group.alpha + (Time.deltaTime*speed)*dir), 0f, 1f);
@@ -87,8 +96,6 @@ namespace Aarware.Core{
             }
             // internal complete actions
             internalComplete?.Invoke();
-            // brodcast end
-            OnComplete?.Invoke(); 
         }
 
         void SetInstant(bool state){
@@ -101,8 +108,6 @@ namespace Aarware.Core{
         void OnValidate() {
             if(group==null){
                 group = GetComponent<CanvasGroup>();
-            }if(group==null){
-                //group = AttComponent<CanvasGroup>();
             }
         }
     }
