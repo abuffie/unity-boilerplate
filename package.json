@@ -11,6 +11,9 @@
     "email": "apbuffie@gmail.com",
     "url": "http://aarware.com"
   },
+  "dependencies": {
+    "com.unity.textmeshpro": "^3.0.6"
+  },
   "samples": [
     {
       "displayName": "Confirm Buttons",

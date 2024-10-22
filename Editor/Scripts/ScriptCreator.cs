@@ -1,10 +1,14 @@
-
-
 namespace Aarware.Core.Editor {
     using System.IO;
     using System.Linq;
     using UnityEditor;
     using UnityEngine;
+
+    /// <summary>
+    /// Script:  ScriptCreator.cs
+    /// Created: 6/13/2022 10:49:03 AM
+    /// Author:  AaronBuffie
+    /// </summary>
 
     public class ScriptCreator : EditorWindow{
 
@@ -17,7 +21,7 @@ namespace Aarware.Core.Editor {
         const string toolRoot           = "Aarware/Scripts/";
 
         [MenuItem(menuRoot + " Create Directories", false, 1)]
-        [MenuItem(toolRoot + "Create Directories", false, 0)]
+        [MenuItem(toolRoot + "Create Directories", false, 1)]
         public static void CreateDirStructure(){
 
             string[] toplevel = new string[]{"Art", "Audio", "Editor", "Fonts", "Scenes", "Scripts", "Prefabs", "External"};
@@ -50,58 +54,64 @@ namespace Aarware.Core.Editor {
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(templatePath, destName);
         }
    
-    //Editor
-        [MenuItem(menuRoot + "Editor/Inspector", false, 1)]
-        [MenuItem(toolRoot + "Editor/Inspector", false, 1)]
-        private static void EditorInspector(){			
-            CreateScriptAsset($"{tplPath}/EditorInspector.cs.txt", "NewEditorInspector.cs");
-        }
-
         
     // BLANK
-        [MenuItem(menuRoot + "Blank/Mono", false, 1)]
-        [MenuItem(toolRoot + "Blank/Mono", false, 1)]
+        [MenuItem(menuRoot + "Blank/Mono", false, 10)]
+        [MenuItem(toolRoot + "Blank/Mono", false, 10)]
         private static void BlankMono(){			
             CreateScriptAsset($"{tplPath}/BlankMono.cs.txt", "NewBlankMono.cs");
         }
-        [MenuItem(menuRoot + "Blank/Class", false, 1)]
-        [MenuItem(toolRoot + "Blank/Class", false, 1)]
+        [MenuItem(menuRoot + "Blank/Class", false, 10)]
+        [MenuItem(toolRoot + "Blank/Class", false, 10)]
         private static void BlankClass(){			
             CreateScriptAsset($"{tplPath}/BlankClass.cs.txt", "NewBlankClass.cs");
         }
-        [MenuItem(menuRoot + "Blank/Static", false, 1)]
-        [MenuItem(toolRoot + "Blank/Static", false, 1)]
+        [MenuItem(menuRoot + "Blank/Static", false, 10)]
+        [MenuItem(toolRoot + "Blank/Static", false, 10)]
         private static void BlankStatic(){			
             CreateScriptAsset($"{tplPath}/BlankStatic.cs.txt", "NewBlankStatic.cs");
         }
 
     //SINGLETONS
-        [MenuItem(menuRoot + "Singleton/GameObject Destroy", false, 0)]
-        [MenuItem(toolRoot + "Singleton/GameObject Destroy", false, 0)]
+        [MenuItem(menuRoot + "Singleton/GameObject Destroy", false, 20)]
+        [MenuItem(toolRoot + "Singleton/GameObject Destroy", false, 20)]
         private static void SingletonGameObject(){			
             CreateScriptAsset($"{tplPath}/SingletonGameObject.cs.txt", "NewSingletonScript.cs");
         }
-        [MenuItem(menuRoot + "Singleton/Component Destroy", false, 0)]
-        [MenuItem(toolRoot + "Singleton/Component Destroy", false, 0)]
+        [MenuItem(menuRoot + "Singleton/Component Destroy", false, 20)]
+        [MenuItem(toolRoot + "Singleton/Component Destroy", false, 20)]
         private static void SingletonComponent(){			
             CreateScriptAsset($"{tplPath}/SingletonComponent.cs.txt", "NewSingletonScript.cs");
         }
-        [MenuItem(menuRoot + "Singleton/NO DESTROY", false, 0)]
-        [MenuItem(toolRoot + "Singleton/NO DESTROY", false, 0)]
+        [MenuItem(menuRoot + "Singleton/NO DESTROY", false, 20)]
+        [MenuItem(toolRoot + "Singleton/NO DESTROY", false, 20)]
         private static void SingletonLive(){			
             CreateScriptAsset($"{tplPath}/SingletonDontDestroy.cs.txt", "NewNDSingletonScript.cs");
         }
-    // MONO LOADED
-        [MenuItem(menuRoot + "Loaded/2D", false, 0)]
-        [MenuItem(toolRoot + "Loaded/2D", false, 0)]
+
+        [MenuItem(menuRoot + "Scriptable", false, 20)]
+        [MenuItem(toolRoot + "Scriptable", false, 20)]
+        private static void Scriptable(){			
+            CreateScriptAsset($"{tplPath}/Scriptable.cs.txt", "NewScriptable.cs");
+        }
+    //MONO LOADED
+        [MenuItem(menuRoot + "Loaded/2D Mono", false, 30)]
+        [MenuItem(toolRoot + "Loaded/2D Mono", false, 30)]
         private static void Loaded2D(){			
             CreateScriptAsset($"{tplPath}/Mono2D.cs.txt", "New2DScript.cs");
         }
 
-        [MenuItem(menuRoot + "Loaded/3D", false, 0)]
-        [MenuItem(toolRoot + "Loaded/3D", false, 0)]
+        [MenuItem(menuRoot + "Loaded/3D Mono", false, 30)]
+        [MenuItem(toolRoot + "Loaded/3D Mono", false, 30)]
         private static void Loaded3D(){			
             CreateScriptAsset($"{tplPath}/Mono3D.cs.txt", "New3DScript.cs");
+        }
+
+        //Editor
+        [MenuItem(menuRoot + "Editor/Inspector", false, 100)]
+        [MenuItem(toolRoot + "Editor/Inspector", false, 100)]
+        private static void EditorInspector(){			
+            CreateScriptAsset($"{tplPath}/EditorInspector.cs.txt", "NewEditorInspector.cs");
         }
 
      

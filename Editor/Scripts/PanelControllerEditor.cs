@@ -3,6 +3,12 @@ namespace Aarware.Core.Editor{
     using UnityEngine;
     using UnityEditor;
 
+    /// <summary>
+    /// Script:  PanelControllerEditor.cs
+    /// Created: 6/13/2022 10:49:03 AM
+    /// Author:  AaronBuffie
+    /// </summary>
+
     [CustomEditor(typeof(PanelController))]
     class PanelControllerEditor : Editor{
 

@@ -1,6 +1,6 @@
 {
-    "name": "com.aarware.core.Runtime",
-    "rootNamespace": "Aarware",
+    "name": "com.aarware.core",
+    "rootNamespace": "Aarware.Core",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,4 +1,8 @@
-namespace Aarware.Core{
+/// <summary>
+/// Script:  SceneAttribute.cs
+/// Created: --
+/// Author:  abuffie
+/// </summary>
 using UnityEngine;
 
 /// <summary>
@@ -6,6 +10,4 @@ using UnityEngine;
 /// Created: 10/13/2022 5:28:37 PM
 /// Author:  abuffie
 /// </summary>
-
-    public class SceneAttribute : PropertyAttribute {}
-}
+public class SceneAttribute : PropertyAttribute {}
