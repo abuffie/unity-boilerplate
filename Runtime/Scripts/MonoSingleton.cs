@@ -3,7 +3,7 @@
 /// Author:  AaronBuffie
 /// </summary>
 using UnityEngine;
-
+namespace Aarware.Core{
 abstract public class MonoSingleton<T> : MonoBehaviour where T : Object {
 
 	/// <summary>
@@ -38,4 +38,4 @@ abstract public class MonoSingleton<T> : MonoBehaviour where T : Object {
 		}
 	}
 }
-    
+}    

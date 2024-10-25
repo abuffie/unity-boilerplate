@@ -9,7 +9,7 @@
     
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+namespace Aarware.Core{
 public class SceneController : MonoSingleton<SceneController>{
     
     [SerializeField] PanelController panel;
@@ -34,4 +34,4 @@ public class SceneController : MonoSingleton<SceneController>{
         panel.Close();
     }
 }
-   
+}

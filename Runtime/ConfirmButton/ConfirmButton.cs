@@ -12,7 +12,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System;
 
-
+namespace Aarware.Core{
 public class ConfirmButton : Button, IPointerDownHandler, IPointerExitHandler, IPointerUpHandler{
     
 
@@ -92,6 +92,6 @@ public class ConfirmButton : Button, IPointerDownHandler, IPointerExitHandler, I
         interactable=true;
         if(enabledEffect!=null){enabledEffect.SetActive(false);} // make sure its disabled  
     }
-    
 
+}
 }

@@ -7,7 +7,7 @@
 using System.Collections;
 using System;
 using UnityEngine;
-
+namespace Aarware.Core{
 [RequireComponent(typeof(CanvasGroup))]
 public class PanelController : MonoBehaviour{
     [SerializeField]                    bool        instant     = true;
@@ -109,4 +109,5 @@ public class PanelController : MonoBehaviour{
             group = GetComponent<CanvasGroup>();
         }
     }
+}
 }

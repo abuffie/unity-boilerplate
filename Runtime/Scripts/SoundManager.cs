@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
+namespace Aarware.Core{
 /// <summary>
 /// Script:  SoundManager.cs
 /// Created: 5/11/2023 8:52:41 AM
@@ -17,4 +18,5 @@ public class SoundManager : MonoSingleton<SoundManager>{
 		base.Awake(true);
 		// Put your awake code here if any
 	}
+}
 }

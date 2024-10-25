@@ -5,7 +5,7 @@
 /// </summary>
 using UnityEngine;
 using UnityEngine.UI;
-
+namespace Aarware.Core{
 [RequireComponent(typeof(RectTransform))]
 public class CanvasBounds : MonoBehaviour {
 
@@ -25,4 +25,5 @@ public class CanvasBounds : MonoBehaviour {
             gameObject.SetActive(false);
         }
     }
+}
 }

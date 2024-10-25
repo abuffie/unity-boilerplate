@@ -5,7 +5,7 @@ using UnityEditor;
 
 //** REPLACE typeof(#SCRIPTNAME#) WITH THE SCRIPT THE Editor IS FOR
 [CustomEditor(typeof(#SCRIPTNAME#))]
-public class #SCRIPTNAME# : Editor {
+public class #SCRIPTNAME#Editor : Editor {
    
    // old way to access instance
    // *use SerializedObject/SerializedProperty instead

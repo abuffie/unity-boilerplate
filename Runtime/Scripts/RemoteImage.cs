@@ -10,7 +10,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
-
+namespace Aarware.Core{
 //TODO: this uses task which i think might not work on web, test it and add web support if needed
 
 public class RemoteImage {
@@ -84,4 +84,5 @@ public class RemoteImage {
             }
         }
     }
+}
 }

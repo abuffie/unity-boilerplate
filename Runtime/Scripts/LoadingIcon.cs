@@ -5,10 +5,11 @@
 /// </summary>
 using UnityEngine;
 using UnityEngine.UI;
-
+namespace Aarware.Core{
 public class LoadingIcon : MonoBehaviour{
     
     [SerializeField] Image[] bars;
 
     
+}
 }

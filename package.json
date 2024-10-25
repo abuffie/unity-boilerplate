@@ -1,10 +1,10 @@
 {
   "name": "com.aarware.core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "displayName": "Core",
   "description": "Some cool things to get you started",
-  "unity": "2021.3",
-  "unityRelease": "18f1",
+  "unity": "2022.3",
+  "unityRelease": "42f1",
   "keywords": [],
   "author": {
     "name": "Aaron Buffie",
@@ -12,7 +12,7 @@
     "url": "http://aarware.com"
   },
   "dependencies": {
-    "com.unity.textmeshpro": "^3.0.6"
+    "com.unity.textmeshpro": "3.0.6"
   },
   "samples": [
     {
