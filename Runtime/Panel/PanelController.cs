@@ -41,6 +41,11 @@ public class PanelController : MonoBehaviour{
     /// 
     /// </summary>
     /// <param name="instant"></param>
+    public void Open(Action<Action> CustomFade, Action CallBack=null){OnOpenBegin?.Invoke();CustomFade.Invoke(()=>{
+            group.interactable=true;
+            CallBack?.Invoke();
+            OnOpenComplete?.Invoke();
+    }); }
     public void Open(bool instant=false) => Open(instant, null);
     public void Open(bool _instant, Action CallBack=null){        
         gameObject.SetActive(true); 

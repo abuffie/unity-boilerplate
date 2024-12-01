@@ -2,9 +2,10 @@
     "name": "com.aarware.core.Editor",
     "rootNamespace": "Aarware.Core.Editor",
     "references": [
-        "GUID:e4a10172346d443498a36934cd4f76ec"
+        "GUID:e4a10172346d443498a36934cd4f76ec",
+        "UnityEditor"
     ],
-    "includePlatforms": [],
+    "includePlatforms": ["Editor"],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
